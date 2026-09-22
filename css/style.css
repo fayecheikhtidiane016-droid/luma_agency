@@ -259,6 +259,52 @@ ul {
   letter-spacing: 0.04em;
 }
 
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--luma-cream);
+  cursor: pointer;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theme-switch-track {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  padding: 3px;
+  border: 1px solid rgba(245, 242, 234, 0.28);
+  border-radius: 999px;
+  background: rgba(245, 242, 234, 0.12);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.theme-switch-thumb {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--luma-pink);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+body[data-theme="light"] .theme-switch-thumb,
+.theme-switch[aria-pressed="true"] .theme-switch-thumb {
+  transform: translateX(22px);
+  background: var(--luma-pink-light);
+}
+
+.theme-switch:focus-visible .theme-switch-track {
+  outline: 2px solid var(--luma-pink);
+  outline-offset: 3px;
+}
+
 .menu-toggle {
   display: none;
   background: transparent;
@@ -386,6 +432,13 @@ ul {
 
 .visual-card-large {
   height: clamp(420px, 52vw, 580px);
+  background: var(--luma-black);
+}
+
+.visual-card-large .main-brand-logo {
+  object-fit: contain;
+  padding: 12%;
+  filter: none;
 }
 
 .visual-card img,
@@ -873,13 +926,13 @@ ul {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 2rem;
-  align-items: start;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  background: rgba(245, 242, 234, 0.02);
-  border: 1px solid rgba(245, 242, 234, 0.08);
-  border-radius: 28px;
+  align-items: stretch;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .contact-copy h2 {
@@ -894,12 +947,58 @@ ul {
   color: var(--luma-pink);
   font-family: "Playfair Display", serif;
   font-size: clamp(1.5rem, 2vw, 2rem);
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+}
+
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.1rem;
+  height: 100%;
+}
+
+.contact-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  flex: 1;
 }
 
 .contact-details {
   display: grid;
-  gap: 0.6rem;
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  min-height: 0;
+}
+
+.contact-item {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(245, 242, 234, 0.08);
+}
+
+.contact-item:first-child {
+  border-top: 0;
+  padding-top: 0.25rem;
+}
+
+.contact-item:last-child {
+  border-bottom: 0;
+}
+
+.contact-label {
+  color: var(--luma-pink-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .contact-details p,
@@ -909,11 +1008,29 @@ ul {
   font-size: 1.02rem;
 }
 
+.contact-details a {
+  transition: color var(--transition);
+}
+
+.contact-details a:hover,
+.contact-details a:focus-visible {
+  color: var(--luma-pink-light);
+}
+
+.contact-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+}
+
 .contact-form-wrap {
-  background: rgba(17, 17, 17, 0.56);
-  border: 1px solid rgba(245, 242, 234, 0.08);
-  border-radius: 24px;
-  padding: 1.4rem;
+  background: rgba(17, 17, 17, 0.18);
+  border: 1px solid rgba(245, 242, 234, 0.05);
+  border-radius: 22px;
+  padding: 1.25rem;
+  min-height: 100%;
+  display: flex;
+  align-items: stretch;
 }
 
 .contact-form {
@@ -1017,6 +1134,62 @@ ul {
   align-items: center;
 }
 
+.social-block {
+  display: grid;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  min-height: 0;
+  align-content: start;
+}
+
+.social-block h3 {
+  margin: 0;
+  color: var(--luma-pink-light);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.social-block .social-links {
+  gap: 0.7rem 1rem;
+}
+
+.contact-social-block {
+  margin-top: 0;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(245, 242, 234, 0.14);
+  border-radius: 10px;
+  background: rgba(245, 242, 234, 0.04);
+  transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
+}
+
+.social-link img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.social-link::after {
+  display: none;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  border-color: var(--luma-pink);
+  background: rgba(217, 143, 163, 0.14);
+  transform: translateY(-2px);
+}
+
 .footer-nav a,
 .social-links a {
   position: relative;
@@ -1042,6 +1215,129 @@ ul {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+body[data-theme="light"] {
+  --luma-black: #f7f4ee;
+  --luma-cream: #171717;
+  --luma-pink-light: #9d5368;
+  --luma-gray: #666666;
+  --luma-dark-soft: #ffffff;
+  --luma-shadow: rgba(17, 17, 17, 0.1);
+  --luma-border: rgba(17, 17, 17, 0.14);
+  background: #f7f4ee;
+  color: #171717;
+}
+
+body[data-theme="light"] .site-header.scrolled {
+  background: rgba(247, 244, 238, 0.88);
+}
+
+body[data-theme="light"] .brand-mark-wrap,
+body[data-theme="light"] .vision-copy,
+body[data-theme="light"] .expertise-card,
+body[data-theme="light"] .contact-form,
+body[data-theme="light"] .contact-details {
+  background: rgba(17, 17, 17, 0.04);
+  border-color: rgba(17, 17, 17, 0.12);
+}
+
+body[data-theme="light"] .visual-frame,
+body[data-theme="light"] .main-nav {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(17, 17, 17, 0.12);
+}
+
+body[data-theme="light"] .main-nav a,
+body[data-theme="light"] .footer-nav a,
+body[data-theme="light"] .social-links a,
+body[data-theme="light"] .footer-bottom {
+  color: rgba(17, 17, 17, 0.72);
+}
+
+body[data-theme="light"] .btn-secondary,
+body[data-theme="light"] .menu-toggle {
+  border-color: rgba(17, 17, 17, 0.24);
+  color: var(--luma-cream);
+}
+
+body[data-theme="light"] .theme-switch-track {
+  border-color: rgba(17, 17, 17, 0.24);
+  background: rgba(17, 17, 17, 0.08);
+}
+
+body[data-theme="light"] .why-quote,
+body[data-theme="light"] .statement-block,
+body[data-theme="light"] .timeline-item,
+body[data-theme="light"] .project-card,
+body[data-theme="light"] .contact-form input,
+body[data-theme="light"] .contact-form textarea {
+  border-color: rgba(17, 17, 17, 0.12);
+}
+
+body[data-theme="light"] .vision-copy p,
+body[data-theme="light"] .expertise-card p,
+body[data-theme="light"] .timeline-item p,
+body[data-theme="light"] .project-content p,
+body[data-theme="light"] .clients-copy,
+body[data-theme="light"] .contact-details p,
+body[data-theme="light"] .contact-details a,
+body[data-theme="light"] .contact-form label {
+  color: rgba(17, 17, 17, 0.78);
+}
+
+body[data-theme="light"] .why {
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.04), rgba(17, 17, 17, 0.1));
+}
+
+body[data-theme="light"] .why-quote,
+body[data-theme="light"] .contact-grid,
+body[data-theme="light"] .clients,
+body[data-theme="light"] .expertise-card,
+body[data-theme="light"] .project-card {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+body[data-theme="light"] .timeline-item::before {
+  background: rgba(17, 17, 17, 0.15);
+  border-color: rgba(17, 17, 17, 0.24);
+}
+
+body[data-theme="light"] .step-number {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(17, 17, 17, 0.16);
+}
+
+body[data-theme="light"] .client-logo {
+  border-color: rgba(17, 17, 17, 0.14);
+  color: rgba(17, 17, 17, 0.82);
+}
+
+body[data-theme="light"] .contact-form-wrap {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(17, 17, 17, 0.12);
+}
+
+body[data-theme="light"] .contact-form input,
+body[data-theme="light"] .contact-form textarea {
+  background: rgba(17, 17, 17, 0.04);
+  border-color: rgba(17, 17, 17, 0.18);
+  color: #171717;
+}
+
+body[data-theme="light"] .contact-item,
+body[data-theme="light"] .contact-item:last-child {
+  border-color: rgba(17, 17, 17, 0.14);
+}
+
+body[data-theme="light"] .social-link {
+  border-color: rgba(17, 17, 17, 0.14);
+  background: rgba(17, 17, 17, 0.04);
+}
+
+body[data-theme="light"] .footer,
+body[data-theme="light"] .footer-bottom {
+  border-color: rgba(17, 17, 17, 0.12);
 }
 
 @media (max-width: 980px) {

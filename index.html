@@ -37,7 +37,7 @@
         "name": "LUMA AGENCY",
         "description": "Agence de communication créative basée à Dakar.",
         "url": "https://example.com",
-        "email": "lumaagency@gmail.com",
+        "email": "direction.lumaagency@gmail.com",
         "telephone": "+221 78 193 43 81",
         "address": {
           "@type": "PostalAddress",
@@ -77,6 +77,12 @@
           </ul>
         </nav>
 
+        <button class="theme-switch" type="button" aria-label="Activer le thème clair" aria-pressed="false">
+          <span class="theme-switch-label">Noir</span>
+          <span class="theme-switch-track" aria-hidden="true"><span class="theme-switch-thumb"></span></span>
+          <span class="theme-switch-label">Clair</span>
+        </button>
+
         <a href="#contact" class="btn btn-primary nav-cta">Parlons de votre projet <span aria-hidden="true">→</span></a>
 
         <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -108,8 +114,9 @@
             <div class="visual-frame">
               <div class="visual-card visual-card-large">
                 <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
-                  alt="Équipe créative LUMA travaillant ensemble"
+                  src="assets/logo/luma.jpeg"
+                  alt="Logo LUMA Agency"
+                  class="main-brand-logo"
                   loading="eager"
                 />
               </div>
@@ -272,7 +279,6 @@
                   controls
                   playsinline
                   preload="metadata"
-                  poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
                   aria-label="Présentation de projet LUMA"
                 >
                   Votre navigateur ne prend pas en charge la lecture vidéo HTML5.
@@ -294,7 +300,6 @@
                   controls
                   playsinline
                   preload="metadata"
-                  poster="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
                   aria-label="Couverture événement politique"
                 >
                   Votre navigateur ne prend pas en charge la lecture vidéo HTML5.
@@ -316,7 +321,6 @@
                   controls
                   playsinline
                   preload="metadata"
-                  poster="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
                   aria-label="Vidéo immobilière premium"
                 >
                   Votre navigateur ne prend pas en charge la lecture vidéo HTML5.
@@ -332,11 +336,16 @@
 
             <article class="project-card reveal">
               <div class="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
-                  alt="Projet placeholder communication de marque"
-                  loading="lazy"
-                />
+                <video
+                  class="project-video"
+                  src="assets/videos/WhatsApp Video 2026-09-22 at 14.11.24.mp4"
+                  controls
+                  playsinline
+                  preload="metadata"
+                  aria-label="Vidéo de stratégie et communication de marque"
+                >
+                  Votre navigateur ne prend pas en charge la lecture vidéo HTML5.
+                </video>
               </div>
               <div class="project-content">
                 <p class="project-category">Stratégie • Brand</p>
@@ -385,11 +394,50 @@
             <h2>Plus qu’une agence, une signature.</h2>
             <p class="signature-line">Créer. Inspirer. Connecter.</p>
 
-            <div class="contact-details">
-              <p>Dakar, Nord Foire</p>
-              <a href="tel:+221781934381">+221 78 193 43 81</a>
-              <a href="tel:+221709362524">+221 70 936 25 24</a>
-              <a href="mailto:lumaagency@gmail.com">lumaagency@gmail.com</a>
+            <div class="contact-stack">
+              <div class="contact-details">
+                <div class="contact-item">
+                  <span class="contact-label">Adresse</span>
+                  <p>Dakar, Nord Foire</p>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">Téléphone</span>
+                  <div class="contact-values">
+                    <a href="tel:+221781934381">+221 78 193 43 81</a>
+                    <a href="tel:+221709362524">+221 70 936 25 24</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">E-mail</span>
+                  <a href="mailto:direction.lumaagency@gmail.com">direction.lumaagency@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="social-block contact-social-block">
+                <h3>Nos réseaux sociaux</h3>
+                <div class="social-links" aria-label="Réseaux sociaux et contact">
+                  <a class="social-link" href="https://www.tiktok.com/@lumaagency5?_r=1&amp;_t=ZN-99woYIZFjIE" target="_blank" rel="noopener noreferrer" aria-label="TikTok LUMA AGENCY">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg-JWMAX1apzfQmivmnEyvCijkgY0i-fbkVQPn8nDwrg&s=10" alt="Logo TikTok" />
+                    <span>TikTok</span>
+                  </a>
+                  <a class="social-link" href="https://www.instagram.com/direction.lumaagency?stkn=MWFmN2luemNta3gyZQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram LUMA AGENCY">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN_FwcurwXTqWSEiT6LyT21ku3VxL6nROaSwsWSuxHsA&amp;s=10" alt="Logo Instagram" />
+                    <span>Instagram</span>
+                  </a>
+                  <a class="social-link" href="https://www.facebook.com/profile.php?id=61570426319070" target="_blank" rel="noopener noreferrer" aria-label="Facebook LUMA AGENCY">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOAwsK0mhtACyljtZDyzivi9f0Ys_94pfkoP_UaJ9UJg&s=10" alt="Logo Facebook" />
+                    <span>Facebook</span>
+                  </a>
+                  <a class="social-link" href="https://www.linkedin.com/company/luma-agenci/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn LUMA AGENCY">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="Logo LinkedIn" />
+                    <span>LinkedIn</span>
+                  </a>
+                  <a class="social-link" href="https://wa.me/221781934381" target="_blank" rel="noopener noreferrer" aria-label="Contacter LUMA AGENCY sur WhatsApp">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Logo WhatsApp" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -448,11 +496,6 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <div class="social-links" aria-label="Réseaux sociaux">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="LinkedIn">LinkedIn</a>
-          <a href="#" aria-label="Behance">Behance</a>
-        </div>
       </div>
 
       <div class="container footer-bottom">
